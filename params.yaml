@@ -1,0 +1,15 @@
+split:
+  seed: 42
+  size: 20
+  step: 10
+
+train:
+  seed: 42
+  pre_trained: True
+  lr: 0.02
+
+eval:
+  seed: 42
+  smth: 123
+  accuracy: 0.7
+  f1: 0.8
