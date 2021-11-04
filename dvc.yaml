@@ -1,0 +1,34 @@
+stages:
+  split:
+    cmd: python src/split.py
+    deps:
+    - requirements.txt
+    - resources/data.txt
+    - src/split.py
+    params:
+    - split
+    outs:
+    - resources/test.txt
+    - resources/train.txt
+  train:
+    cmd: python src/train.py
+    deps:
+    - requirements.txt
+    - resources/train.txt
+    - src/train.py
+    params:
+    - train
+    outs:
+    - resources/model.txt
+  eval:
+    cmd: python src/eval.py
+    deps:
+    - requirements.txt
+    - resources/model.txt
+    - resources/test.txt
+    - src/eval.py
+    params:
+    - eval
+    metrics:
+    - metrics.yaml:
+        cache: false

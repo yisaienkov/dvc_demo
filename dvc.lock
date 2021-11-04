@@ -1,0 +1,75 @@
+schema: '2.0'
+stages:
+  split:
+    cmd: python src/split.py
+    deps:
+    - path: requirements.txt
+      md5: 40a68e65ffbcafedaa3016f19200b6b9
+      size: 19
+    - path: resources/data.txt
+      md5: e80b5017098950fc58aad83c8c14978e
+      size: 6
+    - path: src/split.py
+      md5: b0c5fffb01298d41cde91bb62d61a44b
+      size: 420
+    params:
+      params.yaml:
+        split:
+          seed: 42
+          size: 20
+          step: 10
+    outs:
+    - path: resources/test.txt
+      md5: 360e2ece07507675dced80ba867d6dcd
+      size: 3
+    - path: resources/train.txt
+      md5: 865fe807bb0ed8ffba5fcfd7c12269f5
+      size: 3
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: requirements.txt
+      md5: 40a68e65ffbcafedaa3016f19200b6b9
+      size: 19
+    - path: resources/train.txt
+      md5: 865fe807bb0ed8ffba5fcfd7c12269f5
+      size: 3
+    - path: src/train.py
+      md5: 2147c9ca45a2865796b2a5102a2f6809
+      size: 434
+    params:
+      params.yaml:
+        train:
+          seed: 42
+          pre_trained: true
+          lr: 0.02
+    outs:
+    - path: resources/model.txt
+      md5: 82616f14a8130d55fe6359743f3d635d
+      size: 32
+  eval:
+    cmd: python src/eval.py
+    deps:
+    - path: requirements.txt
+      md5: 40a68e65ffbcafedaa3016f19200b6b9
+      size: 19
+    - path: resources/model.txt
+      md5: 82616f14a8130d55fe6359743f3d635d
+      size: 32
+    - path: resources/test.txt
+      md5: 360e2ece07507675dced80ba867d6dcd
+      size: 3
+    - path: src/eval.py
+      md5: 59aa408877c378a44309b7ae01baecb1
+      size: 669
+    params:
+      params.yaml:
+        eval:
+          seed: 42
+          smth: 123
+          accuracy: 0.7
+          f1: 0.8
+    outs:
+    - path: metrics.yaml
+      md5: 3cf1826682ab72465b7062af8c877c8a
+      size: 41
