@@ -43,8 +43,8 @@ if __name__ == "__main__":
     with open("metrics.json", "w") as f:
         json.dump(
             {
-                "accuracy": 0.82,
-                "f1": 0.83,
+                "accuracy": 0.8,
+                "f1": 0.85,
             }, 
             f, 
             indent=4,
