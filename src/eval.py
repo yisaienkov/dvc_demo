@@ -20,11 +20,11 @@ if __name__ == "__main__":
     time.sleep(2)
     print("Save metrics...")
 
-    with open("metrics.yaml", "w") as f:
+    with open("metrics.json", "w") as f:
         json.dump(
             {
-                "accuracy": params["eval"]["accuracy"],
-                "f1": params["eval"]["f1"],
+                "accuracy": 0.82,
+                "f1": 0.81,
             }, 
             f, 
             indent=4,

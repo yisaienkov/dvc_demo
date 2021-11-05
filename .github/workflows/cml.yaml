@@ -25,5 +25,5 @@ jobs:
           # Pull dataset with DVC 
           dvc pull
           
-          cat metrics.json >> report.md
+          dvc metrics diff --all --show-md master >> report.md
           cml-send-comment report.md 

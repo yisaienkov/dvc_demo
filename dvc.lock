@@ -60,8 +60,8 @@ stages:
       md5: 360e2ece07507675dced80ba867d6dcd
       size: 3
     - path: src/eval.py
-      md5: 59aa408877c378a44309b7ae01baecb1
-      size: 669
+      md5: ec252dc168820c937faf1bce38091be9
+      size: 631
     params:
       params.yaml:
         eval:
@@ -70,6 +70,6 @@ stages:
           accuracy: 0.7
           f1: 0.8
     outs:
-    - path: metrics.yaml
-      md5: 3cf1826682ab72465b7062af8c877c8a
-      size: 41
+    - path: metrics.json
+      md5: a67e3d1874e337987e91eae201feb6b4
+      size: 43
