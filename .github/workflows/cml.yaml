@@ -25,9 +25,6 @@ jobs:
           # Pull dataset with DVC 
           dvc pull
 
-          echo "## Input data" >> report.md  
-          cat resources/data.txt >> report.md  
-
           echo "## Metrics (comparing with the master branch)" >> report.md          
           git fetch --prune
           dvc metrics diff --all --show-md master >> report.md
