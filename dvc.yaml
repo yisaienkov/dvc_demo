@@ -30,5 +30,5 @@ stages:
     params:
     - eval
     metrics:
-    - metrics.yaml:
+    - metrics.json:
         cache: false
