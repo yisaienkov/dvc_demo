@@ -42,7 +42,7 @@ stages:
         train:
           seed: 42
           pre_trained: true
-          lr: 0.02
+          lr: 0.05
     outs:
     - path: resources/model.txt
       md5: 82616f14a8130d55fe6359743f3d635d
@@ -60,19 +60,17 @@ stages:
       md5: 38e7611c76c8ce425ea876aee6cb3d18
       size: 4
     - path: src/eval.py
-      md5: 63e950a2eff291381e18f83fa71cecde
-      size: 1283
+      md5: a44d719f54f5da121488982179f8abd6
+      size: 1282
     params:
       params.yaml:
         eval:
           seed: 42
           smth: 123
-          accuracy: 0.7
-          f1: 0.8
     outs:
     - path: metrics.json
-      md5: 5bcd1ab3373199d8c165d9b32fbaea5c
-      size: 43
+      md5: 0f1f1ddeb3d21ad364ab4a541925b2f5
+      size: 42
     - path: resources/images/
       md5: 28a08d7b9481e9668ce1961c496a4080.dir
       size: 581378

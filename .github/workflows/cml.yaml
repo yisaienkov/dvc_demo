@@ -22,11 +22,13 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
-          # Pull dataset with DVC 
           dvc pull
+          git fetch --prune
+
+          echo "## Parameters (comparing with the master branch)" >> report.md          
+          dvc params diff --all --show-md master >> report.md
 
           echo "## Metrics (comparing with the master branch)" >> report.md          
-          git fetch --prune
           dvc metrics diff --all --show-md master >> report.md
 
           echo "## Visualizations" >> report.md   
