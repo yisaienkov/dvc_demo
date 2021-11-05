@@ -25,5 +25,5 @@ jobs:
           # Pull dataset with DVC 
           dvc pull
           
-          cat metrics.txt >> report.md
+          cat metrics.json >> report.md
           cml-send-comment report.md 
