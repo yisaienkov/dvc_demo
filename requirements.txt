@@ -1,2 +1,4 @@
 dvc[gdrive]
 pyyaml
+numpy
+opencv-python
