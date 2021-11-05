@@ -24,6 +24,9 @@ jobs:
         run: |
           # Pull dataset with DVC 
           dvc pull
-          
+
+          # Compare metrics to master          
+          git fetch --prune
           dvc metrics diff --all --show-md master >> report.md
+          
           cml-send-comment report.md 
