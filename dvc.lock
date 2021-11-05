@@ -60,9 +60,8 @@ stages:
       md5: 38e7611c76c8ce425ea876aee6cb3d18
       size: 4
     - path: src/eval.py
-      md5: bb70f014d1d469dcf11daf3475d7eb3e
-      size: 1288
-
+      md5: 63e950a2eff291381e18f83fa71cecde
+      size: 1283
     params:
       params.yaml:
         eval:
@@ -75,6 +74,6 @@ stages:
       md5: 5bcd1ab3373199d8c165d9b32fbaea5c
       size: 43
     - path: resources/images/
-      md5: 90425f0c50ff64c5dc1fe3b53adea6e3.dir
-      size: 2330389
+      md5: 28a08d7b9481e9668ce1961c496a4080.dir
+      size: 581378
       nfiles: 3

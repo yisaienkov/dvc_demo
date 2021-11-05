@@ -29,14 +29,14 @@ if __name__ == "__main__":
 
     os.makedirs("resources/images/", exist_ok=True)
     for i in range(3):
-        pixels = np.random.randint(0, 256, size=(512, 512, 3))
+        pixels = np.random.randint(0, 256, size=(256, 256, 3))
         # It's the best code in my life
         cv2.rectangle(
             pixels, 
             (50 * (i + 1), 50 * (i + 1)), 
-            (100 * (i + 1), 100 * (i + 1)), 
+            (75 * (i + 1), 75 * (i + 1)), 
             (255 * ((i + 1) % 3 == 1), 255 * ((i + 2) % 3 == 1), 255 * ((i + 3) % 3 == 1)), 
-            thickness=10,
+            thickness=5,
         )
         cv2.imwrite(f"resources/images/{i}.png", pixels)
 
