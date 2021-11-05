@@ -30,8 +30,8 @@ jobs:
           dvc metrics diff --all --show-md master >> report.md
 
           echo "## Visualizations" >> report.md   
-          cml publish 0.png --md >> report.md
-          cml publish 1.png --md >> report.md
-          cml publish 2.png --md >> report.md
+          cml publish resources/images/0.png --md >> report.md
+          cml publish resources/images/1.png --md >> report.md
+          cml publish resources/images/2.png --md >> report.md
           
           cml send-comment report.md 
