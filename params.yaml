@@ -11,5 +11,3 @@ train:
 eval:
   seed: 42
   smth: 123
-  accuracy: 0.7
-  f1: 0.8
