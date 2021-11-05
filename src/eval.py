@@ -27,7 +27,6 @@ if __name__ == "__main__":
     time.sleep(1)
     print("Save metrics...")
 
-
     os.makedirs("resources/images/", exist_ok=True)
     for i in range(3):
         pixels = np.random.randint(0, 256, size=(512, 512, 3))
