@@ -60,7 +60,7 @@ stages:
       md5: 360e2ece07507675dced80ba867d6dcd
       size: 3
     - path: src/eval.py
-      md5: ec252dc168820c937faf1bce38091be9
+      md5: 68ad9ec6ce098ee5a81ad3b137b85975
       size: 631
     params:
       params.yaml:
@@ -71,5 +71,5 @@ stages:
           f1: 0.8
     outs:
     - path: metrics.json
-      md5: a67e3d1874e337987e91eae201feb6b4
+      md5: 5bcd1ab3373199d8c165d9b32fbaea5c
       size: 43

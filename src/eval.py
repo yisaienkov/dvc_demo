@@ -24,7 +24,7 @@ if __name__ == "__main__":
         json.dump(
             {
                 "accuracy": 0.82,
-                "f1": 0.81,
+                "f1": 0.83,
             }, 
             f, 
             indent=4,
