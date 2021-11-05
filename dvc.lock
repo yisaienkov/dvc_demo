@@ -4,11 +4,11 @@ stages:
     cmd: python src/split.py
     deps:
     - path: requirements.txt
-      md5: 40a68e65ffbcafedaa3016f19200b6b9
-      size: 19
+      md5: 332270f497b8b8ec534699bec0f3474c
+      size: 41
     - path: resources/data.txt
-      md5: e80b5017098950fc58aad83c8c14978e
-      size: 6
+      md5: 7ac66c0f148de9519b8bd264312c4d64
+      size: 7
     - path: src/split.py
       md5: b0c5fffb01298d41cde91bb62d61a44b
       size: 420
@@ -20,8 +20,8 @@ stages:
           step: 10
     outs:
     - path: resources/test.txt
-      md5: 360e2ece07507675dced80ba867d6dcd
-      size: 3
+      md5: 38e7611c76c8ce425ea876aee6cb3d18
+      size: 4
     - path: resources/train.txt
       md5: 865fe807bb0ed8ffba5fcfd7c12269f5
       size: 3
@@ -29,8 +29,8 @@ stages:
     cmd: python src/train.py
     deps:
     - path: requirements.txt
-      md5: 40a68e65ffbcafedaa3016f19200b6b9
-      size: 19
+      md5: 332270f497b8b8ec534699bec0f3474c
+      size: 41
     - path: resources/train.txt
       md5: 865fe807bb0ed8ffba5fcfd7c12269f5
       size: 3
@@ -51,17 +51,18 @@ stages:
     cmd: python src/eval.py
     deps:
     - path: requirements.txt
-      md5: 40a68e65ffbcafedaa3016f19200b6b9
-      size: 19
+      md5: 332270f497b8b8ec534699bec0f3474c
+      size: 41
     - path: resources/model.txt
       md5: 82616f14a8130d55fe6359743f3d635d
       size: 32
     - path: resources/test.txt
-      md5: 360e2ece07507675dced80ba867d6dcd
-      size: 3
+      md5: 38e7611c76c8ce425ea876aee6cb3d18
+      size: 4
     - path: src/eval.py
-      md5: 1472a64905067a751a871f5fa15fd5cd
-      size: 631
+      md5: bb70f014d1d469dcf11daf3475d7eb3e
+      size: 1288
+
     params:
       params.yaml:
         eval:
@@ -71,5 +72,9 @@ stages:
           f1: 0.8
     outs:
     - path: metrics.json
-      md5: bd0bfb1bca1a62a49d089ba051e63e80
+      md5: 5bcd1ab3373199d8c165d9b32fbaea5c
       size: 43
+    - path: resources/images/
+      md5: 90425f0c50ff64c5dc1fe3b53adea6e3.dir
+      size: 2330389
+      nfiles: 3

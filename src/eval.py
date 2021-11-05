@@ -1,12 +1,19 @@
+import os
 import time
 import json
+import random
 
 import yaml
+import numpy as np
+import cv2
 
 
 if __name__ == "__main__":
     with open("params.yaml", "r") as fd:
         params = yaml.safe_load(fd)
+
+    random.seed(params["eval"]["seed"])
+    np.random.seed(params["eval"]["seed"])
 
     print("Train...")
     
@@ -17,14 +24,27 @@ if __name__ == "__main__":
         model = f.read()
 
     print("Smth difficult...")
-    time.sleep(2)
+    time.sleep(1)
     print("Save metrics...")
+
+    os.makedirs("resources/images/", exist_ok=True)
+    for i in range(3):
+        pixels = np.random.randint(0, 256, size=(512, 512, 3))
+        # It's the best code in my life
+        cv2.rectangle(
+            pixels, 
+            (50 * (i + 1), 50 * (i + 1)), 
+            (100 * (i + 1), 100 * (i + 1)), 
+            (255 * ((i + 1) % 3 == 1), 255 * ((i + 2) % 3 == 1), 255 * ((i + 3) % 3 == 1)), 
+            thickness=10,
+        )
+        cv2.imwrite(f"resources/images/{i}.png", pixels)
 
     with open("metrics.json", "w") as f:
         json.dump(
             {
-                "accuracy": 0.81,
-                "f1": 0.81,
+                "accuracy": 0.82,
+                "f1": 0.83,
             }, 
             f, 
             indent=4,

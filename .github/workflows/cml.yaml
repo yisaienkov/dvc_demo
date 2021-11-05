@@ -24,6 +24,17 @@ jobs:
         run: |
           # Pull dataset with DVC 
           dvc pull
+
+          echo "## Input data" >> report.md  
+          cat resources/data.txt >> report.md  
+
+          echo "## Metrics (comparing with the master branch)" >> report.md          
+          git fetch --prune
+          dvc metrics diff --all --show-md master >> report.md
+
+          echo "## Visualizations" >> report.md   
+          cml publish resources/images/0.png --md >> report.md
+          cml publish resources/images/1.png --md >> report.md
+          cml publish resources/images/2.png --md >> report.md
           
-          cat metrics.json >> report.md
-          cml-send-comment report.md 
+          cml send-comment report.md 

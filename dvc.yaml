@@ -29,6 +29,8 @@ stages:
     - src/eval.py
     params:
     - eval
+    outs:
+    - resources/images/
     metrics:
     - metrics.json:
         cache: false
